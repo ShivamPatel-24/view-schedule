@@ -73,7 +73,7 @@ def write_to_html_file(df, title='', filename='out.html'):
         /* function timedRefresh(timeoutPeriod) {
             setTimeout("location.reload(true);",timeoutPeriod);
         }
-        window.onload = timedRefresh(5000); 
+        window.onload = timedRefresh(1000); 
 
         var d = new Date();
         const time = d.toLocaleTimeString('en-US', {
