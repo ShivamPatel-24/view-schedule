@@ -1,4 +1,5 @@
-import pandas as pd
+import pandas.io.formats.style, pandas as pd
+
 
 def write_to_html_file(df, title='', filename='out.html'):
     '''
@@ -69,13 +70,12 @@ def write_to_html_file(df, title='', filename='out.html'):
     result += '''
 
     <script>
-        function timedRefresh(timeoutPeriod) {
+        /* function timedRefresh(timeoutPeriod) {
             setTimeout("location.reload(true);",timeoutPeriod);
         }
-        window.onload = timedRefresh(1000);
+        window.onload = timedRefresh(5000); 
 
         var d = new Date();
-
         const time = d.toLocaleTimeString('en-US', {
             hour: '2-digit',
             minute: '2-digit',

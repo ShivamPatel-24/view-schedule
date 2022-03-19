@@ -33,5 +33,7 @@ table tbody tr:hover {
 /* function timedRefresh(timeoutPeriod) {
     setTimeout("location.reload(true);",timeoutPeriod);
 }
-var time = Math.round(d.getTime() / year)
-window.onload = timedRefresh(5000); */
+window.onload = timedRefresh(5000); 
+
+
+*/

@@ -1,5 +1,4 @@
-import pandas.io.formats.style, pandas as pd
-import numpy as np
+import pandas as pd
 from html import write_to_html_file
 
 a = pd.read_csv("schedule/monday.csv")
