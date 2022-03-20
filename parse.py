@@ -1,16 +1,33 @@
 import pandas.io.formats.style, pandas as pd
+from datetime import date
 
-df = pd.read_csv("schedule/monday.csv")
+'''
+    Using the csv file data based on the current day
+    If its Saturday or Sunday, show the monday's schedule
+'''
+
+days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+today = days[date.today().weekday()]
+today = "thursday"
+title = today.capitalize() + " Schedule"
+
+if today == "saturday" or today == "sunday":
+    today = "monday"
+    title = "Upcoming Monday's Schedule"
+
+df = pd.read_csv(f"schedule/{today}.csv")
 df.to_html("Table.html")
 
 filename = "Output.html"
-title = "Schedule"
+
 result = '''
 <html>
 <head>
-    <h2><span id='date'></span></h2>
+    <h2 id='date'></h2>
 <style>
-
+    html{
+        background-color: #b0e0e6;
+    }
     h2 {
         text-align: center;
         line-height: 1.5em;
@@ -55,7 +72,6 @@ result = '''
     table tbody tr:hover {
         background-color: #dddddd;
     }
-
 
 </style>
 </head>
