@@ -69,21 +69,32 @@ else:
 result += '''
 
     <script>
-        function timedRefresh(timeoutPeriod) {
-            setTimeout("location.reload(true);",timeoutPeriod);
+
+        date_time();
+
+        function date_time(){
+            var d = new Date();
+
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        
+            var hours = d.getHours()
+            var minutes = d.getMinutes()
+            var sec = d.getSeconds()
+
+            if (minutes < 10){ minutes = "0" + minutes }
+            if (sec < 10){ sec = "0" + sec }
+
+            var time = hours + ":" + minutes + ":" + sec + " ";
+            if(hours > 11){ time += "PM"; } else { time += "AM"; }
+
+            dateTime = days[d.getDay()] + " - " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() + ", " + time;
+            
+
+            document.getElementById('date').innerHTML= dateTime;
+
+            setTimeout(date_time,1000);
         }
-         
-
-        var d = new Date();
-        const time = d.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-        });
-
-        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        document.getElementById('date').innerHTML= days[d.getDay()] + " - " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() + " - " + time;
-
         
     </script>
 </body>
@@ -91,5 +102,3 @@ result += '''
 '''
 with open(filename, 'w') as f:
     f.write(result)
-
-# window.onload = timedRefresh(1000);
