@@ -8,7 +8,7 @@ from datetime import date
 
 days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 today = days[date.today().weekday()]
-today = "thursday"
+today = today.lower()
 title = today.capitalize() + " Schedule"
 
 if today == "saturday" or today == "sunday":
