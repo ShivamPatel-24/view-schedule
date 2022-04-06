@@ -1,5 +1,5 @@
 function loadTable(dow) {
-    var fileName = "/schedule/" + dow + ".csv"
+    var fileName = "./schedule/" + dow + ".csv"
 
     d3.csv(fileName).then(function (data) {
 
