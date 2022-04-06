@@ -1,4 +1,4 @@
-import pandas.io.formats.style, pandas as pd
+import pandas as pd
 from datetime import date
 
 '''
@@ -9,11 +9,7 @@ from datetime import date
 days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 today = days[date.today().weekday()]
 today = today.lower()
-title = today.capitalize() + " Schedule"
-
-if today == "saturday" or today == "sunday":
-    today = "monday"
-    title = "Upcoming Monday's Schedule"
+title = "Today's Schedule"
 
 df = pd.read_csv(f"schedule/{today}.csv")
 df.to_html("Table.html")
@@ -78,10 +74,7 @@ result = '''
 <body>
     '''
 result += '<h2> %s </h2>\n' % title
-if type(df) == pd.io.formats.style.Styler:
-    result += df.render()
-else:
-    result += df.to_html(classes='wide', escape=False)
+result += df.to_html(classes='wide', escape=False)
 result += '''
 
     <script>
