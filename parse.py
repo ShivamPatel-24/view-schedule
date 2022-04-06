@@ -1,11 +1,6 @@
 import pandas as pd
 from datetime import date
 
-'''
-    Using the csv file data based on the current day
-    If its Saturday or Sunday, show the monday's schedule
-'''
-
 days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 today = days[date.today().weekday()]
 today = today.lower()
