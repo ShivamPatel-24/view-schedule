@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>View Schedule</title>
+</head>
+<body>
+    <h2 id='date'></h2>
+
+    <div class="dropdown">
+
+        <select id="dayofweek" onchange="getOption(event)">
+            <option id="monday" value="monday">Monday</option>
+            <option id="tuesday" value="tuesday">Tuesday</option>
+            <option id="wednesday" value="wednesday">Wednesday</option>
+            <option id="thursday" value="thursday">Thursday</option>
+            <option id="friday" value="friday">Friday</option>
+        </select>
+        
+    </div>
+
+    <div id="tble">        
+        
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
