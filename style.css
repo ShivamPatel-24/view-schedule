@@ -51,3 +51,28 @@ tr:nth-child(even) {
 table tbody tr:hover {
     background-color: #dddddd;
 }
+
+
+/* Dropdown Button */
+#dayofweek {
+    background-color: #009578;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+
+  }
+  
+  #dayofweek:hover, #dayofweek:focus {
+    background-color: #009578;
+  }
+  
+  .dropdown {
+    text-align: center;
+    margin-bottom: 6px;
+    justify-content: center;
+  }
+  
